@@ -14,7 +14,17 @@ def hamming(s1, s2):
 	if len(s1) != len(s2):
 		print "Strings are not equal in length"
 	else:
-		print sum(el1 != el2 for el1, el2 in zip(s1, s2))
+		return sum(el1 != el2 for el1, el2 in zip(s1, s2))
+
+def main():
+	file = open('challenge6.txt')
+
+	for line in file.readlines():
+		line = line.strip('\n')
+		decoded = binascii.a2b_base64(line)
+		print decoded
+
+		hamming(s1,s2)
 
 if __name__ == "__main__":
-	hamming(s1,s2)
+	main()
